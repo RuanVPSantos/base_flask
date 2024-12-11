@@ -1,0 +1,14 @@
+# venv create and activate
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Create database (opcional se usar db.create_all())
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+# Run app
+python app/main.py
